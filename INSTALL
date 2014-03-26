@@ -1,0 +1,49 @@
+This howto explains the installation and setup of a diversifying
+compiler that adds an option to diversify static data as well.
+
+This is work in progress. On one hand we, will add more and more features
+as we continue this project. On the other hand, don't blame us if
+anything breaks!
+
+
+0) Prerequisites
+Check out the MalDiv git repository:
+$ git clone https://github.com/gannimo/MalDiv
+
+From now on we'll refer to this directory as $MalDiv. Replace this variable with
+your local directory.
+
+In your $MalDiv directory you should have the following subdirectories and files:
+- INSTALL: this file
+- README.md: you guessed it
+- src: will keep the sources for the LLVM and clang compiler
+- bin: will keep the compiled binaries
+- test: contains a set of simple examples
+
+1) Download and prepare the multicompiler:
+While the multicompiler is currently being integrated into mainline LLVM
+we are not there yet. The current MalDiv compiler builds on a snapshot
+of the multicompiler that builds on LLVM 3.4. The current version is
+tested mainly on Linux x86.
+
+The readme file that helps you through download and compilation is at:
+https://ssllab.org/~ahomescu/multicompiler/MC_README_34.txt
+
+Download both LLVM 3.4 and clang:
+$ cd $MalDiv
+$ wget -c https://ssllab.org/~ahomescu/multicompiler/multicompiler-llvm-34.zip
+$ wget -c https://ssllab.org/~ahomescu/multicompiler/multicompiler-clang-34.zip
+$ cd src
+$ unzip -n ../multicompiler-llvm-34.zip
+$ cd tools
+$ unzip ../../multicompiler-clang-34.zip
+
+2) Configure and build LLVM
+Please make sure that you have all the necessary packages installed that enable
+building LLVM; follow http://clang.llvm.org/get_started.html for details.
+
+$ cd $MalDiv/bin
+$ ../src/configure --enable-targets=x86,x86_64 --enable-optimized
+$ make -j 2
+
+And you are good to go!
