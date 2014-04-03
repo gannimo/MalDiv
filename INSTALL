@@ -36,13 +36,15 @@ $ wget -c https://ssllab.org/~ahomescu/multicompiler/multicompiler-clang-34.zip
 $ cd src
 $ unzip -n ../multicompiler-llvm-34.zip
 $ cd tools
-$ unzip ../../multicompiler-clang-34.zip
+$ mkdir clang; $ cd clang
+$ unzip ../../../multicompiler-clang-34.zip
 
 2) Configure and build LLVM
 Please make sure that you have all the necessary packages installed that enable
 building LLVM; follow http://clang.llvm.org/get_started.html for details.
 
-$ cd $MalDiv/bin
+$ cd $MalDiv
+$ mkdir bin; cd bin
 $ ../src/configure --enable-targets=x86,x86_64 --enable-optimized
 $ make -j 2
 
