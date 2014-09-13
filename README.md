@@ -1,42 +1,28 @@
 MalDiv
 ======
 
-Abstract
+概述
 --------
 
-Signature-based similarity metrics are the primary mechanism to detect malware
-on current systems. Each file is scanned and compared against a set of
-signatures. This approach has several problems: (i) all possible detectable
-malware must have a signature in the database and (ii) it might take a
-substantial amount of time between initial spread of the malware and the time
-anti-malware companies generate a signature to protect from the malware. 
+  当前系统下，恶意软件的主要检测机制是匹配数字签名的相似度，每个文件被扫描并与一系列签名做比较。
+这种方法存在一些问题：(i)能够检测到的恶意软件必须在数据库里有签名。(ii)恶意软件从开始传播
+到反病毒公司数据库录入恶意软件的签名信息，中间需要大量时间。
 
-On the other hand, the malware landscape is changing: there are only few
-malware families alive at a certain point in time. Each family evolves along
-a common software update and maintenance cycle. Individual malware instances
-are repacked or obfuscated whenever they are detected by a large set of
-anti-malware products, basically resulting in an arms race between malware
-authors and anti-malware products.
+  另一方面，恶意软件被反病毒软件检测到以后，它会不断通过代码重组或混淆等技术手段逃避检测，这
+导致了恶意软件与反病毒厂商的一场军备竞赛。
 
-Anti-malware products are not efficient if they follow this arms race and we
-show how it is possible to maximize the advantage for malware distributors.
-We present MalDiv, an automatic diversification mechanism that uses
-compiler-based transformations to generate an almost infinite amount of
-binaries with the same functionality but very low similarity, resulting in
-different signatures. Malware diversity builds on software diversity and uses
-open decisions in the compiler to reorder and change code and data. In
-addition, static data is encrypted using a set of transformations. Such a tool
-allows malware distributors to generate an almost unlimited amount of binaries
-that cannot be detected using signature-based matching.
+  反病毒产品总是这场军备竞赛中被动的一方，我们将在这里展示如何使恶意软件经销商的利益最大化。我们
+展示了MalDiv，一个基于编译器实现的自动多样化转换机制，它把同一段代码转换成完全不同的二进制形式，
+具有非常低的相似度，并拥有不同的签名。恶意软件的多样性建立在编译器对代码和数据的重新排序和改变的
+基础之上。此外，静态数据被转换加密。对通过这种方法生成的恶意软件，基于数字签名匹配的检测技术就
+完全失效了。
 
 
-Contents
+内容
 --------
 
-The following subdirectories and files are in this repository:
-- README.md: you guessed it
-- INSTALL: use this file to build a diversifying LLVM and clang
-- src: will keep the sources for the LLVM and clang compiler
-- bin: will keep the compiled binaries
-- test: contains a set of simple examples
-
+- README.md
+- INSTALL:    用这个文件编译 LLVM 和 clang
+- src:        LLVM 和 clang 编译器代码
+- bin:        编译后的二进制文件
+- test:       包含一些实例
