@@ -1,0 +1,1 @@
+-mllvm -randomize-cfg -mllvm -bb-split-percentage=50 -mllvm -bb-merge-percentage=50 -Xclang -nop-insertion -mllvm -nop-insertion-percentage=50 -mllvm -random-inliner -mllvm -random-inliner-percentage=50 -mllvm -sched-randomize -mllvm -sched-randomize-percentage=50 -mllvm -mov-to-lea-percentage=50 -mllvm -randomize-function-list=1

@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: suffix_tree
+Version: 2.1
+Summary: 
+      A python suffix tree, for easy algorithmic prototyping.
+      
+Home-page: http://www.daimi.au.dk/~mailund/suffix_tree.html
+Author: Thomas Mailund
+Author-email: mailund@birc.dk
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
