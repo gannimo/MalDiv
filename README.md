@@ -1,6 +1,17 @@
 MalDiv
 ======
 
+Authors
+-------
+
+* Mathias Payer <mathias.payer@nebelwelt.net>
+* Stefan Brunthaler
+* Per Larsen
+* Stephen Crane
+* Richard Wartell
+* Michael Franz
+
+
 Abstract
 --------
 
@@ -38,5 +49,6 @@ The following subdirectories and files are in this repository:
 - INSTALL: use this file to build a diversifying LLVM and clang
 - src: will keep the sources for the LLVM and clang compiler
 - bin: will keep the compiled binaries
-- test: contains a set of simple examples
-
+- test: contains a set of simple examples, test cases, and analysis scripts
+- paper: contains both the SyScan and the arXiv paper (and sources)
+- presentation: contains the two MalDiv presentations
